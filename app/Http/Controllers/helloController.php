@@ -12,7 +12,7 @@ class helloController extends Controller
         //return ['name'=>"Anik"];
         $req->validate([
             'uname' => 'max:6',
-            'psw' => 'min:6'
+            'psw' => 'min:5'
         ]);
         
         return view('home',['user'=>$req]);
