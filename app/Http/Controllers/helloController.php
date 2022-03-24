@@ -3,12 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Contracts\Validation\Rule;
 
 class helloController extends Controller
 {
-    public function hello($user)
+    public function login(Request $req)
     {
         //return ['name'=>"Anik"];
-        return view('hello',['user'=>$user]);
+        $req->validate([
+            'uname' => 'max:6',
+            'psw' => 'min:6'
+        ]);
+        
+        return view('home',['user'=>$req]);
     }
 }

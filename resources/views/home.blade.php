@@ -1,7 +1,7 @@
-<title>Welcome</title>
+<title>Home</title>
 @include('components\header')
 
-<h1 class="text">Hey There!</h1>
+<h1 class="text">Hey {{$user->uname}}</h1>
 @include('components\footer')
 <style>
     .text{
